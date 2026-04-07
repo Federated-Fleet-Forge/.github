@@ -23,6 +23,18 @@ flowchart LR
   C -->|watches| Z
 ```
 
+### Why three repositories?
+
+This architecture intentionally splits configuration across three repositories rather than using a single monorepo. This is driven by security, access control, and operational stability:
+
+- **The Git RBAC Problem:** Git permissions apply to the *entire repository*. You cannot securely restrict write access to specific folders.
+- **Protecting the Root of Trust:** `example-ocp-gitops-base` controls the Argo CD instances, root App-of-Apps, and cluster-wide RBAC. Anyone with write access here effectively has fleet-wide admin rights. It must be isolated and locked down to the **Platform Team**.
+- **Delegated Access by Team:** Separate `policies` and `ztp` repos allow specific teams to safely merge updates without risking the core GitOps wiring:
+  - **Platform Team** manages the core GitOps base and policies.
+  - **Engineering Teams** can read and submit PRs for policies (e.g., Operator lifecycles or configuration rollouts).
+  - **Network and Data Centre Teams** can read and submit PRs for ZTP (e.g., updating a site's IP address, NNCPs, routes) without needing platform-level access.
+- **Separating Code vs. Config:** A monorepo forces you to mix structural templates (platform "code") with day-to-day cluster values (site "config"). Splitting them prevents tangled Git histories and noisy PRs.
+
 - **example-ocp-gitops-base** bootstraps OpenShift GitOps on the hub, defines Argo CD instances, and deploys an app-of-apps pattern with ApplicationSets that point at the policies and ZTP repositories.
 - **example-ocp-policies** holds ACM PolicyGenerator sources and placements, organized for fleet-wide policy rollout.
 - **example-ocp-ztp** holds ZTP site configuration, cluster-specific policy inputs, extra manifests, and optional pre-flight tooling.
