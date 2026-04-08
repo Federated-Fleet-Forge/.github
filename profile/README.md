@@ -48,14 +48,14 @@ This architecture intentionally splits configuration across three repositories r
 
 | Repository | Description |
 |------------|-------------|
-| [example-ocp-gitops-base](https://github.com/dusty-seahorse/example-ocp-gitops-base) | Hub cluster bootstrap: GitOps operator wiring, Argo CD configuration, root applications, and ApplicationSets for policies and ZTP. |
-| [example-ocp-policies](https://github.com/dusty-seahorse/example-ocp-policies) | Fleet policies expressed with PolicyGenerator, grouped by control family for consistent governance. |
-| [example-ocp-ztp](https://github.com/dusty-seahorse/example-ocp-ztp) | ZTP site configs, per-cluster policy material, extra manifests, and validation helpers. |
+| [example-ocp-gitops-base](https://github.com/federated-fleet-forge/example-ocp-gitops-base) | Hub cluster bootstrap: GitOps operator wiring, Argo CD configuration, root applications, and ApplicationSets for policies and ZTP. |
+| [example-ocp-policies](https://github.com/federated-fleet-forge/example-ocp-policies) | Fleet policies expressed with PolicyGenerator, grouped by control family for consistent governance. |
+| [example-ocp-ztp](https://github.com/federated-fleet-forge/example-ocp-ztp) | ZTP site configs, per-cluster policy material, extra manifests, and validation helpers. |
 
 ## Documentation
 
-For component relationships, data flow, and operational boundaries, see the architecture guide in the bootstrap repository: [docs/architecture.md](https://github.com/dusty-seahorse/example-ocp-gitops-base/blob/main/docs/architecture.md).
+For component relationships, data flow, and operational boundaries, see the architecture guide in the bootstrap repository: [docs/architecture.md](https://github.com/federated-fleet-forge/example-ocp-gitops-base/blob/main/docs/architecture.md).
 
 ## Getting started
 
-Clone [example-ocp-gitops-base](https://github.com/dusty-seahorse/example-ocp-gitops-base) and follow its README for prerequisites, directory layout, and adaptation steps. That repository is the intended entry point for standing up the reference pattern on a management hub.
+Clone [example-ocp-gitops-base](https://github.com/federated-fleet-forge/example-ocp-gitops-base) and follow its README for prerequisites, directory layout, and adaptation steps. That repository is the intended entry point for standing up the reference pattern on a management hub.
