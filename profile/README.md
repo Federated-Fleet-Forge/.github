@@ -3,7 +3,7 @@
 Federated-Fleet-Forge provides a reference implementation for managing the full lifecycle of OpenShift clusters through a multi-team, multi-repository GitOps architecture. By intentionally separating the GitOps "Root of Trust" from day-to-day site configurations and fleet-wide policies, this design solves the core Git RBAC challenge: providing delegated access to specific teams without compromising global administrative control. This federated approach empowers Platform, Engineering, and Network and infrastructure teams to safely contribute to their respective domains—whether managing core GitOps wiring, rolling out NIST-compliant security policies, or refining site-specific networking and Zero Touch Provisioning (ZTP)—ensuring that every cluster across the fleet remains repeatable, observable, and securely governed.
 
 Cluster lifecycle uses Red Hat Advanced Cluster Management (ACM), Argo CD / OpenShift GitOps, and Zero Touch Provisioning (ZTP). The design is split across three coordinated Git repositories:
-1. a hub bootstrap repository that installs and wires GitOps
+1. App of Apps bootstrap repository, installs everyhting and wires the GitOps for all three repos.
 2. Policies repo for fleet configuration via ACM PolicyGenerator, 
 3. ZTP repository for site configs, cluster-specific policy inputs, and infrastructure readiness scripts.
 
