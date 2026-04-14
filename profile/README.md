@@ -59,3 +59,11 @@ For component relationships, data flow, and operational boundaries, see the arch
 ## Getting started
 
 Clone [example-ocp-gitops-base](https://github.com/federated-fleet-forge/example-ocp-gitops-base) and follow its README for prerequisites, directory layout, and adaptation steps. That repository is the intended entry point for standing up the reference pattern on a management hub.
+
+## Lab environment
+
+For development and testing without physical hardware, the reference architecture can target libvirt VMs exposed via Sushy Redfish emulation.
+
+- **[sushy-lab](https://github.com/ngner/sushy-lab)** -- Host setup, Sushy emulator install, and VM lifecycle scripts. Produces the Redfish BMC endpoints that `BareMetalHost` resources connect to.
+
+A worked libvirt lab example is provided in [example-ocp-ztp/siteconfigs/libvirt-lab/](https://github.com/federated-fleet-forge/example-ocp-ztp/tree/main/siteconfigs/libvirt-lab).
