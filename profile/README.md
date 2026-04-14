@@ -65,6 +65,5 @@ Clone [example-ocp-gitops-base](https://github.com/federated-fleet-forge/example
 For development and testing without physical hardware, the reference architecture can target libvirt VMs exposed via Sushy Redfish emulation.
 
 - **[sushy-lab](https://github.com/ngner/sushy-lab)** -- Host setup, Sushy emulator install, and VM lifecycle scripts. Produces the Redfish BMC endpoints that `BareMetalHost` resources connect to.
-- **[networklab](https://github.com/ngner/networklab)** -- Deep-dive curriculum for the Linux networking constructs (bridges, VLANs, dnsmasq, OVS) underpinning the lab topology.
 
 A worked libvirt lab example is provided in [example-ocp-ztp/siteconfigs/libvirt-lab/](https://github.com/federated-fleet-forge/example-ocp-ztp/tree/main/siteconfigs/libvirt-lab).
