@@ -9,7 +9,7 @@ This federated approach empowers Platform, Engineering, and Network and infrastr
 Cluster lifecycle uses Red Hat Advanced Cluster Management (ACM), Argo CD / OpenShift GitOps, and Zero Touch Provisioning (ZTP). The design is split across three coordinated Git repositories:
 1. App of Apps bootstrap repository, installs everyhting and wires the GitOps for all three repos.
 2. Policies repo for fleet configuration via ACM PolicyGenerator, 
-3. ZTP repository for site configs, cluster-specific policy inputs, and infrastructure readiness scripts. This could be further split into domain specific repos if required.
+3. ZTP repository for Cluster Instantiation and Configuratoin Items via site configs, cluster-specific policy inputs, and infrastructure readiness scripts. This could be further split into domain specific repos if required.
 
 ## Repository layout
 
